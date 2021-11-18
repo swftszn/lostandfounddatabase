@@ -1,0 +1,47 @@
+<h1>Lost and Found</h1>
+
+
+<h2>All lost items</h2>
+<table>
+    <tr>
+      <th>Date</th>
+      <th>Title</th>
+    </tr>
+    {% for event in all_events %}
+        <tr>
+            <td>{{ event.date }}</td>
+            <td><a href="{% url 'detail' event.id %}">{{ event.title }}</a></td>
+        </tr>
+    {% endfor %}
+
+</table>
+
+
+<h2>DTG Lost items</h2>
+<table>
+    <tr>
+      <th>Date</th>
+      <th>Title</th>
+    </tr>
+    {% for event in events_DTG %}
+        <tr>
+            <td>{{ event.date }}</td>
+            <td><a href="{% url 'detail' event.id %}">{{ event.title }}</a></td>
+        </tr>
+    {% endfor %}
+
+</table>
+<h2>Items lost today</h2>
+<table>
+    <tr>
+      <th>Date</th>
+      <th>Title</th>
+    </tr>
+    {% for event in events_today %}
+        <tr>
+            <td>{{ event.date }}</td>
+            <td>{{ event.title }}</td>
+        </tr>
+    {% endfor %}
+
+</table>
